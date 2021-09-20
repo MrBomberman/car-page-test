@@ -101,6 +101,11 @@ h3 {
 #make {
   color: orange;
 }
+.formGarage {
+  opacity: 0;
+  transform: scale(0);
+  transition: .6s ease opacity,.6s ease transform;
+}
 
 @media screen and (max-width: 900px){
     h1 {

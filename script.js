@@ -11,6 +11,7 @@ const garageName = document.querySelector("#name");
 const email = document.querySelector("#email");
 const owner = document.querySelector("#owner");
 const btnEdit =  document.querySelector("#edit");
+const form = document.querySelector('.formGarage');
 
 
 
@@ -39,18 +40,23 @@ async function getData(){
     btnEdit.addEventListener('click', () => {
         editing = !editing
         if(editing){
-            btnEdit.innerHTML = 'OK'
-            garageName.disabled = false;
-            email.disabled = false;
-            owner.disabled = false;
+            btnEdit.innerHTML = 'CANCEL'
+            form.style.cssText = 'display:block'
+            window.setTimeout(function(){
+                form.style.opacity = 1;
+                form.style.transform = 'scale(1)';
+              },0);
         } else {
             btnEdit.innerHTML = 'EDIT'
-            garageName.disabled = true;
-            email.disabled = true;
-            owner.disabled = true;
+            form.style.opacity = 0;
+            form.style.transform = 'scale(0)';
+            window.setTimeout(function(){
+              form.style.display = 'none';
+            },700);
         }
 
     })
+    
 }
 
 getData()
