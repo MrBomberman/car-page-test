@@ -1,0 +1,11 @@
+{
+  "name": "data-request-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "start": "npx http-server --port 3001"
+  },
+  "author": "MrBomberman",
+  "license": "ISC"
+}

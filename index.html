@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>  
+    <div class="container">
+        <h1>Car information</h1>
+        <h2>Title: <span id="title"></span></h2>
+        <div class="descriptionClass">
+            <h3>Description: <span id="description"></span></h3>
+            <p>Fuel type: <span id="fuelType"></span></p>
+            <p>Trim level: <span id="trimLevel"></span></p>
+            <p>Gear box: <span id="gearBox"></span></p>
+        </div>
+        <div id='original'>
+            <h2>Original</h2>
+            <p>Make: <span id="make"></span></p>
+            <div id='carOptions'>
+                <h3>Car options:</h3>
+               <p>Title: <span id="optionTitle"></span></p>
+               <p>Code: <span id="optionCode"></span></p>
+            </div>
+            <p>Model: <span id="model"></span></p>
+        </div>
+        <h2>Garage</h2>
+        <div><button id="edit" class="editBtn">Edit</button></div>  
+        <form action="" method="post">
+            <div><input id="name" name="name" type="text" disabled></div>
+            <div><input id="email" name="email" type="email" disabled></div>
+            <div><input id="owner" name="owner" type="text" disabled></div>
+            <p><input class="submit" type="submit"></p>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

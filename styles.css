@@ -1,0 +1,109 @@
+html {
+  margin: 0;
+  padding: 0;
+  background-color: #126bbf;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+button {
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.editBtn {
+  background-color: white;
+  color: black;
+  border: 2px solid #7f7c65;
+  text-transform: uppercase;
+}
+
+.editBtn:hover {
+  background-color: #7f7c65;
+  color: white;
+}
+input[type="text"] {
+  background-color: white;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+input[type="email"] {
+  background-color: white;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+.submit {
+  width: 100%;
+  font-size: 16px;
+  margin: 4px 2px;
+  padding: 16px 32px;
+  transition-duration: 0.4s;
+  background-color: white;
+  color: black;
+  border: 2px solid #efa48b;
+  text-transform: uppercase;
+}
+.submit:hover {
+  color: white;
+  background-color: #efa48b;
+}
+h1 {
+  color: #ffffff;
+  font-family: "Raleway", sans-serif;
+  font-size: 62px;
+  font-weight: 800;
+  line-height: 72px;
+  margin: 0 0 24px;
+  text-align: center;
+  text-transform: uppercase;
+}
+h2 {
+  color: #ffffff;
+  font-family: "Raleway", sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 36px;
+  margin: 0 0 24px;
+  text-align: center;
+}
+p {
+  color: #f8f8f8;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 32px;
+  margin: 0 0 24px;
+}
+h3 {
+  color: white;
+  font-family: "Source Sans Pro", sans-serif;
+  line-height: 32px;
+  margin: 0 0 24px;
+  text-decoration: underline;
+}
+#make {
+  color: orange;
+}
+
+@media screen and (max-width: 900px){
+    h1 {
+        font-size: 30px;
+    }
+}
