@@ -105,9 +105,17 @@ h3 {
   color: orange;
 }
 .formGarage {
+  display: block;
+  opacity: 1;
+  transform: scale(1);
+  transition: .6s ease opacity,.6s ease transform;
+}
+.hidden {
+  display: none;
+}
+.formHidden {
   opacity: 0;
   transform: scale(0);
-  transition: .6s ease opacity,.6s ease transform;
 }
 
 @media screen and (max-width: 900px){

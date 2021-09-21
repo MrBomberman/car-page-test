@@ -24,19 +24,17 @@ btnEdit.addEventListener('click', () => {
     editing = !editing
     if (editing) {
         btnEdit.innerHTML = 'CANCEL'
-        form.style.cssText = 'display:block'
+        form.classList.remove('hidden');
         window.setTimeout(function () {
-            form.style.opacity = 1;
-            form.style.transform = 'scale(1)';
+            form.classList.remove('formHidden')
         }, 0);
         btnSubmit.addEventListener('click', (e) => {
             editing = false;
             e.preventDefault();
             btnEdit.innerHTML = 'EDIT'
-            form.style.opacity = 0;
-            form.style.transform = 'scale(0)';
+            form.classList.add('formHidden')
             window.setTimeout(function () {
-                form.style.display = 'none';
+                form.classList.add('hidden');
             }, 700);
             garageName.value = garageName.value;
             email.value = email.value;
@@ -47,10 +45,9 @@ btnEdit.addEventListener('click', () => {
         })
     } else {
         btnEdit.innerHTML = 'EDIT'
-        form.style.opacity = 0;
-        form.style.transform = 'scale(0)';
+        form.classList.add('formHidden')
         window.setTimeout(function () {
-            form.style.display = 'none';
+            form.classList.add('hidden');
         }, 700);
         garageName.value = finalName.innerHTML;
         email.value = finalEmail.innerHTML;
