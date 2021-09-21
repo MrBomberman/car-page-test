@@ -13,12 +13,53 @@ const owner = document.querySelector("#owner");
 const btnEdit = document.querySelector("#edit");
 const form = document.querySelector(".formGarage");
 const btnSubmit = document.querySelector("#submit");
+const finalName = document.querySelector("#finalName");
+const finalEmail = document.querySelector("#finalEmail");
+const finalOwner = document.querySelector("#finalOwner");
 
 
+let editing = false;
+
+btnEdit.addEventListener('click', () => {
+    editing = !editing
+    if (editing) {
+        btnEdit.innerHTML = 'CANCEL'
+        form.style.cssText = 'display:block'
+        window.setTimeout(function () {
+            form.style.opacity = 1;
+            form.style.transform = 'scale(1)';
+        }, 0);
+        btnSubmit.addEventListener('click', (e) => {
+            editing = false;
+            e.preventDefault();
+            btnEdit.innerHTML = 'EDIT'
+            form.style.opacity = 0;
+            form.style.transform = 'scale(0)';
+            window.setTimeout(function () {
+                form.style.display = 'none';
+            }, 700);
+            garageName.value = garageName.value;
+            email.value = email.value;
+            owner.value = owner.value;
+            finalName.innerHTML = garageName.value;
+            finalEmail.innerHTML = email.value;
+            finalOwner.innerHTML = owner.value;
+        })
+    } else {
+        btnEdit.innerHTML = 'EDIT'
+        form.style.opacity = 0;
+        form.style.transform = 'scale(0)';
+        window.setTimeout(function () {
+            form.style.display = 'none';
+        }, 700);
+        garageName.value = finalName.innerHTML;
+        email.value = finalEmail.innerHTML;
+        owner.value = finalOwner.innerHTML;
+    }
+})
 
 
 // fetching data
-let editing = false;
 
 async function getData() {
     const response = await fetch('http://109.236.74.74:9900/getdata')
@@ -39,44 +80,9 @@ async function getData() {
     email.value = Garage.Email;
     owner.value = Garage.Owner;
 
-    let currentName = garageName.value === Garage.Name ? Garage.Name : garageName.value;
-    let currentEmail = email.value === Garage.Email ? Garage.Email : email.value;
-    let currentOwner = owner.value === Garage.Owner ? Garage.Owner : owner.value;
-
-    btnEdit.addEventListener('click', () => {
-        editing = !editing
-        if (editing) {
-            btnEdit.innerHTML = 'CANCEL'
-            form.style.cssText = 'display:block'
-            window.setTimeout(function () {
-                form.style.opacity = 1;
-                form.style.transform = 'scale(1)';
-            }, 0);
-            btnSubmit.addEventListener('click', (e) => {
-                editing = false;
-                e.preventDefault();
-                btnEdit.innerHTML = 'EDIT'
-                form.style.opacity = 0;
-                form.style.transform = 'scale(0)';
-                window.setTimeout(function () {
-                    form.style.display = 'none';
-                }, 700);
-                currentName = garageName.value;
-                currentEmail = email.value;
-                currentOwner = owner.value;
-            })
-        } else {
-            btnEdit.innerHTML = 'EDIT'
-            form.style.opacity = 0;
-            form.style.transform = 'scale(0)';
-            window.setTimeout(function () {
-                form.style.display = 'none';
-            }, 700);
-            garageName.value = currentName;
-            email.value = currentEmail;
-            owner.value = currentOwner;
-        }
-    })
+    finalName.innerHTML = garageName.value;
+    finalEmail.innerHTML = email.value;
+    finalOwner.innerHTML = owner.value;
 
 }
 
